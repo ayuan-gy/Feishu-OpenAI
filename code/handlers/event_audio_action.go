@@ -48,7 +48,7 @@ func (*AudioAction) Execute(a *ActionInfo) bool {
 		// 等待转换完成
 		audio.OggToWavByPath(f, output)
 		defer os.Remove(output)
-		//fmt.Println("output: ", output)
+		fmt.Println("output: ", output)
 
 		text, err := a.handler.gpt.AudioToText(output)
 		if err != nil {
